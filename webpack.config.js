@@ -33,6 +33,11 @@ module.exports = {
                     limit: 10000 // 10Kb
                 }
             },
+            {
+                test: /\.(ts|tsx|js)$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+            },
         ],
     },
     plugins: [new CleanWebpackPlugin()],
