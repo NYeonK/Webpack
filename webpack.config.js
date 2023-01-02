@@ -13,6 +13,10 @@ module.exports = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
     },
+    devServer: {
+        overlay: true,
+        stats: "errors-only",
+    },
     module: {
         rules: [
             {
