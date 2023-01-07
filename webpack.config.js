@@ -17,7 +17,7 @@ module.exports = {
     devServer: {
         overlay: true,
         stats: "errors-only",
-        path: path.join(__dirname, "/.tmp","drop","assets"),
+        hot: true,
     },
     module: {
         rules: [
