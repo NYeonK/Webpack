@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
@@ -16,6 +17,7 @@ module.exports = {
     devServer: {
         overlay: true,
         stats: "errors-only",
+        path: path.join(__dirname, "/.tmp","drop","assets"),
     },
     module: {
         rules: [
@@ -38,11 +40,16 @@ module.exports = {
                 }
             },
             {
-                test: /\.(ts|tsx|js)$/,
+                test: /\.(ts|tsx|js|jsx)$/,
                 exclude: /node_modules/,
                 loader: "babel-loader",
             },
         ],
     },
-    plugins: [new CleanWebpackPlugin()],
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+        })
+    ],
 };
