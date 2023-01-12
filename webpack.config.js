@@ -50,7 +50,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: path.join(__dirname, '.', 'public/index.html'),
+            filename: 'index.html',      
         }),
         new CopyPlugin({
             patterns: [
