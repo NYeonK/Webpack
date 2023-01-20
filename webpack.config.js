@@ -42,12 +42,12 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.(png|jpg|svg|gif)$/,
+                test: /\.(png|jpg|svg|gif|jpeg)$/,
                 loader: "url-loader",
                 options: {
                     name: "[name].[ext]?[hash]",
-                    limit: 10000 // 10Kb
-                }
+                },
+                type: 'javascript/auto',
             },
             {
                 test: /\.(ts|tsx|js|jsx)$/,
