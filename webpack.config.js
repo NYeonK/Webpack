@@ -46,6 +46,8 @@ module.exports = {
                 loader: "url-loader",
                 options: {
                     name: "[name].[ext]?[hash]",
+                    limit: 10000, // 10Kb
+                    outputPath: 'asset',
                 },
                 type: 'javascript/auto',
             },
@@ -60,13 +62,13 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '.', 'public/index.html'),
-            filename: 'index.html',      
+            filename: 'index.html',
         }),
         new CopyPlugin({
             patterns: [
                 {
                     from: 'public/',
-                    to: '',
+                    to: 'public/',
                     globOptions: {
                         ignore: ['**/*.html'],
                     },
