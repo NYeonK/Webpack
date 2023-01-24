@@ -32,16 +32,6 @@ module.exports = {
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.(ts|tsx)$/,
-                use: {
-                    loader: "ts-loader",
-                    options: {
-                        configFile: path.resolve(__dirname, "tsconfig.json"),
-                    },
-                },
-                exclude: /node_modules/,
-            },
-            {
                 test: /\.(png|jpg|svg|gif|jpeg)$/,
                 loader: "url-loader",
                 options: {
