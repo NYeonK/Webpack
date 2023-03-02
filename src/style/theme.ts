@@ -53,13 +53,7 @@ interface Font {
   notoSans?: boolean;
 }
 
-function FONT({
-  weight,
-  size,
-  lineHeight,
-  letterSpacing,
-  notoSans,
-}: Font): string {
+function FONT({ weight, size, lineHeight, letterSpacing, notoSans }: Font): string {
   return `
     font-family: ${notoSans ? "Noto Sans" : "Pretendard"};
     font-weight: ${weight};
@@ -139,8 +133,7 @@ interface Media {
 const media: Media = {
   desktop: (...args: BackQuoteArgs) =>
     css`
-      @media screen and (min-width: 48rem),
-        screen and (min-height: 48rem) and (orientation: landscape) {
+      @media screen and (min-width: 48rem), screen and (min-height: 48rem) and (orientation: landscape) {
         ${args}
       }
     `,
