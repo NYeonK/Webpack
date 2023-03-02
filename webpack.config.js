@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -8,7 +9,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 module.exports = {
-  mode: "development",
+  //mode: "development",
+  mode: "production",
   entry: {
     main: "./src/index.tsx",
   },
@@ -27,8 +29,9 @@ module.exports = {
     overlay: true,
     stats: "errors-only",
     hot: true,
-    host: "0.0.0.0",
     port: 3000,
+    host: "0.0.0.0",
+    historyApiFallback: true,
   },
   module: {
     rules: [
