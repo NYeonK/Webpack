@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider npm-run-all webpack-dev-server --progress",
-    "lint": "npm run lint-prettier && npm run lint-eslint && npm run lint-css",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && webpack",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server --progress",
+    "lint": "SET NODE_OPTIONS=--openssl-legacy-provider && npm run lint-prettier && npm run lint-eslint && npm run lint-css",
     "lint-eslint": "eslint --ignore-path .gitignore src/**/*{ts,tsx} --fix",
     "lint-prettier": "prettier --write \"src/**/*.(ts|tsx)\"",
     "lint-css": "stylelint --ignore-path .gitignore \"src/**/*.(css|tsx|ts)\" --fix"
