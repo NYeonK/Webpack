@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --progress",
+    "start": "webpack-dev-server --progress --openssl-legacy-provider",
     "lint": "npm run lint-prettier && npm run lint-eslint && npm run lint-css",
     "lint-eslint": "eslint --ignore-path .gitignore src/**/*{ts,tsx} --fix",
     "lint-prettier": "prettier --write \"src/**/*.(ts|tsx)\"",
